@@ -23,8 +23,9 @@ public class DummyContent {
      */
     public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
-    private static final int COUNT = 25;
 /*
+    private static final int COUNT = 3;
+
     static {
         // Add some sample items.
         for (int i = 1; i <= COUNT; i++) {
@@ -34,9 +35,9 @@ public class DummyContent {
 */
 
     static {
-        addItem(new DummyItem("1","Marshall JMP 800"));
-        addItem(new DummyItem("1","Marshall JMP 800"));
-        addItem(new DummyItem("1","Marshall JMP 800"));
+        addItem(new DummyItem("1","Marshall", "JMP 800","http://www.drtube.com/schematics/marshall/2959-pic1.jpg"));
+        addItem(new DummyItem("2","Vox", "AC30","http://c1.zzounds.com/media/fit,2018by3200/quality,85/AC30_2x12_front-85b8b718f02627d9c08d712573fbccf6.jpg"));
+        addItem(new DummyItem("3","Fender", "Bassman","http://www.fmicassets.com/Damroot/ZoomJpg/10001/2171000010_amp_frt_001_nr.jpg"));
     }
 
 
@@ -44,10 +45,10 @@ public class DummyContent {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
-
+/*
     private static DummyItem createDummyItem(int position) {
         return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
-    }
+    }*/
 
     private static String makeDetails(int position) {
         StringBuilder builder = new StringBuilder();
@@ -62,19 +63,21 @@ public class DummyContent {
      * A dummy item representing a piece of content.
      */
     public static class DummyItem {
-        public final String id;
-        public final String content;
-        public final String details;
+        public String id;
+        public String marca;
+        public String modelo;
+        public String urlFoto;
 
-        public DummyItem(String id, String content, String details) {
+        public DummyItem(String id, String marca, String modelo, String urlFoto) {
             this.id = id;
-            this.content = content;
-            this.details = details;
+            this.marca = marca;
+            this.modelo = modelo;
+            this.urlFoto = urlFoto;
         }
 
         @Override
         public String toString() {
-            return content;
+            return marca;
         }
     }
 }

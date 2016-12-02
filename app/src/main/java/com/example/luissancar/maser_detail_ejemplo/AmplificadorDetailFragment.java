@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.example.luissancar.maser_detail_ejemplo.dummy.DummyContent;
@@ -49,7 +50,7 @@ public class AmplificadorDetailFragment extends Fragment {
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.content);
+                appBarLayout.setTitle(mItem.marca);
             }
         }
     }
@@ -61,7 +62,9 @@ public class AmplificadorDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.amplificador_detail)).setText(mItem.details);
+            ((WebView) rootView.findViewById(R.id.webAm)).loadUrl(mItem.urlFoto);
+            ((TextView) rootView.findViewById(R.id.textoAmpli)).setText(mItem.marca+mItem.modelo);
+
         }
 
         return rootView;

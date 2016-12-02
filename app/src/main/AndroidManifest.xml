@@ -28,5 +28,6 @@
                 android:value="com.example.luissancar.maser_detail_ejemplo.AmplificadorListActivity" />
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
